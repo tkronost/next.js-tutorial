@@ -17,8 +17,7 @@ const links = [
     href: '/dashboard/invoices',
     icon: DocumentDuplicateIcon,
   },
-  { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
-  { name: 'Prueba', href: '/dashboard/prueba', icon: UserGroupIcon }
+  { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon }
 ];
 
 export default function NavLinks() {
@@ -39,7 +38,14 @@ export default function NavLinks() {
               },
             )}
           >
-            <LinkIcon className="w-6" />
+            {/* <LinkIcon className="w-6" />  */}
+            {/* Cambio para que el ícono ambién cambie de color cuando el link está activo, se agrega la clase condicionalmente */}
+            <LinkIcon className={clsx(
+              'w-6',
+              {
+                'bg-sky-100 text-blue-600': pathname === link.href,
+              },
+            )} />
             <p className="hidden md:block">{link.name}</p>
           </Link>
         );
