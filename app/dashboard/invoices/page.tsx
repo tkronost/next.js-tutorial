@@ -8,7 +8,6 @@ import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 import { Metadata } from 'next';
 
-
 export const metadata: Metadata = {
   title: 'Invoices',
 };
